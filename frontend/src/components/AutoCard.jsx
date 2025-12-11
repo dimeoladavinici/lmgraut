@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import waIcon from "../assets/whatsapp.svg"
 
-const API_BASE = "http://localhost:4000"
+const API_BASE = "https://lmgraut.onrender.com"
 
 export default function AutoCard({ auto }) {
     const [index, setIndex] = useState(0)

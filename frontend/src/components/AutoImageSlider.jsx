@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = "https://lmgraut.onrender.com";
 
 function AutoImageSlider({ fotos }) {
     const validFotos = fotos

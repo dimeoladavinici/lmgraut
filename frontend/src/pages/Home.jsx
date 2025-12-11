@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchAutos } from "../services/api";
 
 const WHATSAPP_NUMERO = "5492396520000";
-const API_BASE = "http://localhost:4000";
+const API_BASE = "https://lmgraut.onrender.com";
 
 export default function Home() {
     const [autos, setAutos] = useState([]);

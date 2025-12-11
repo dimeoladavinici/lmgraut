@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:4000/api";
+const API_URL = "https://lmgraut.onrender.com";
 
 export async function fetchAutos() {
     const res = await axios.get(`${API_URL}/autos`);
