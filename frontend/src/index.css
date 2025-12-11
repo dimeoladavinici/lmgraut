@@ -1,0 +1,595 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #111827;
+  background-color: #f3f4f6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* LAYOUT GENERAL */
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1rem;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+}
+
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(243, 244, 246, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #4b5563;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  border-color: #d1d5db;
+}
+
+.nav-link.active {
+  background: #111827;
+  color: #f9fafb;
+}
+
+/* FOOTER */
+
+.app-footer {
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+
+.footer-admin {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 0.78rem;
+  color: #9ca3af;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.footer-admin:hover {
+  opacity: 1;
+}
+
+.footer-dev {
+  margin-left: auto;
+  font-size: 0.82rem;
+  color: #4b5563;
+  text-decoration: none;
+}
+
+.footer-dev:hover {
+  text-decoration: underline;
+}
+
+/* HOME, FORM, INPUTS */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  background: #ffffff;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: 2px solid #111827;
+  outline-offset: 1px;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* BOTONES GENERALES */
+
+.btn {
+  margin-top: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #16a34a;
+  color: #f9fafb;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #15803d;
+}
+
+.btn-small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.btn-danger {
+  background: #dc2626;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+}
+
+.btn-disabled {
+  background: #9ca3af;
+  color: #f9fafb;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* TITULOS Y TEXTOS */
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+/* GRID AUTOS */
+
+.grid-autos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .grid-autos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-autos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+/* CARD AUTO + SLIDER (altura fija) */
+
+.auto-card-modern {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.auto-card-modern:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 260px;
+  overflow: hidden;
+  background: #111827;
+}
+
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.4s ease;
+}
+
+.slider:hover .slider-img {
+  transform: scale(1.06);
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(249, 250, 251, 0.5);
+}
+
+.dot.active {
+  background: #f9fafb;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(15, 23, 42, 0.5);
+  color: #f9fafb;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.slider-arrow-left {
+  left: 8px;
+}
+
+.slider-arrow-right {
+  right: 8px;
+}
+
+.auto-info {
+  padding: 0.85rem 0.9rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.auto-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+.auto-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* BANNER VENDIDO */
+
+.sold-banner {
+  position: absolute;
+  top: 18px;
+  left: -60px;
+  width: 260px;
+  text-align: center;
+  background: #dc2626;
+  color: #f9fafb;
+  padding: 0.3rem 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  transform: rotate(-35deg);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.55);
+  pointer-events: none;
+}
+
+
+/* BOTON WHATSAPP */
+
+.btn-wa {
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #22c55e;
+  color: #f9fafb;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 24px rgba(34, 197, 94, 0.45);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.btn-wa:hover:not(.btn-wa-disabled) {
+  background: #16a34a;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(22, 163, 74, 0.55);
+}
+
+.btn-wa-disabled {
+  background: #9ca3af;
+  box-shadow: none;
+  cursor: default;
+}
+
+.wa-icon-img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* ADMIN */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 480px;
+}
+
+.admin-login,
+.admin,
+.tasacion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.admin {
+  margin-top: 1rem;
+}
+
+.admin-form-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.upload-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+}
+
+.upload-label {
+  font-size: 0.8rem;
+  color: #4b5563;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.upload-label input[type="file"] {
+  font-size: 0.8rem;
+}
+
+.upload-status {
+  font-size: 0.75rem;
+  color: #16a34a;
+}
+
+.admin-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.admin-search {
+  max-width: 400px;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 0.7rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.admin-card-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.admin-card-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.admin-card-meta {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.admin-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .filters {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .admin-card-actions {
+    flex-direction: row;
+  }
+}
+
+.home-results,
+.home-results-empty {
+  min-height: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.btn-secondary {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #f3f4f6;
+}
+
+/* Botón flotante de WhatsApp abajo a la derecha */
+.wa-float {
+  position: fixed;
+  right: 1rem;
+  bottom: 1.1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #22c55e;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(34, 197, 94, 0.5);
+  z-index: 40;
+}
+
+.wa-icon {
+  font-size: 1.5rem;
+  color: #f9fafb;
+}
+
+.main-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.no-results-container {
+    min-height: 50vh; /* evita que se achique */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-wa {
+  text-decoration: none !important;
+}
+.btn-wa span {
+  text-decoration: none !important;
+}
+
+.btn-wa,
+.btn-wa span {
+  text-decoration: none !important;
+}
